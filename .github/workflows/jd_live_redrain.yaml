@@ -1,0 +1,31 @@
+
+
+name: jd_live_redrain 直播红包雨【2020-12-7 到 2020-12-12】
+on:
+  workflow_dispatch:
+  schedule:
+      - cron: "0 0,9,11,13,15,17,19,20,21,23 * * *"
+  watch:
+      types: [started]
+  repository_dispatch:
+      types: necklace
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/Tenkai17/JD_Script.git ~/scripts
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: npm install
+        run: |
+          cd ~/scripts
+          npm install
+      - name: '运行 【直播红包雨】'
+        run: |
+          cd ~/scripts
+          node jd_live_redrain.js
