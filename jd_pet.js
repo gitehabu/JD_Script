@@ -285,6 +285,8 @@ async function doTask() {
     // 去逛逛好货会场
     for (let item of browseSingleShopInitList) {
         const browseSingleShopInitTask = $.taskInfo[item];
+        console.log('去逛逛好货会场：')
+        console.log(browseSingleShopInitTask)
         if (browseSingleShopInitTask && !browseSingleShopInitTask.finished) {
             await browseSingleShopInit(browseSingleShopInitTask);
         }
@@ -364,6 +366,8 @@ async function browseSingleShopInit(item) {
     console.log(`开始做 ${item.title} 任务， ${item.desc}`);
     const body = {"index": item['index'], "version":1, "type":1};
     const body2 = {"index": item['index'], "version":1, "type":2};
+    console.log('浏览指定店铺：')
+    console.log(item['index'], body, body2)
     const response = await request("getSingleShopReward", body);
     // console.log(`点击进去response::${JSON.stringify(response)}`);
     if (response.code === '0' && response.resultCode === '0') {

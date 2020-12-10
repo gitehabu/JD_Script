@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         run: |
+        # https://qastack.cn/programming/22147574/fatal-could-not-read-username-for-https-github-com-no-such-file-or-directo
+        # git clone https://{username}:{password}@github.com/{username}/JD_Script.git ~/scripts
           git clone https://github.com/Tenkai17/JD_Script.git ~/scripts
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
