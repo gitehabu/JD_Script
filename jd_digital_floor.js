@@ -28,7 +28,14 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 const randomCount = $.isNode() ? 20 : 5;
-const inviteCodes = [`40cd108f-9eed-4897-b795-45a5b221cd6b@49efb480-d6d7-456b-a4e0-14b170b161e0@`,'9d4262a5-1a02-4ae7-8a86-8d070d531464@687b14e0-ce0a-45eb-bf46-71aa0da05f18'];
+const inviteCodes = [
+    `1c0a48de-706c-4965-882c-19a4100e9d7a@3bb576eb-d456-477d-a07d-2895f3ce3893@270de1ea-0832-4294-afdb-c3e8d734ef7f@bf9ea1d0-abee-49f7-a6da-4c3f1238ae10@f94e5909-95d0-46e2-aa32-8f77402298c1@bfa684fc-f267-40a5-a9ca-4db346672180`,
+    `1c0a48de-706c-4965-882c-19a4100e9d7a@3bb576eb-d456-477d-a07d-2895f3ce3893@270de1ea-0832-4294-afdb-c3e8d734ef7f@bf9ea1d0-abee-49f7-a6da-4c3f1238ae10@f94e5909-95d0-46e2-aa32-8f77402298c1@bfa684fc-f267-40a5-a9ca-4db346672180`,
+    `1c0a48de-706c-4965-882c-19a4100e9d7a@3bb576eb-d456-477d-a07d-2895f3ce3893@270de1ea-0832-4294-afdb-c3e8d734ef7f@bf9ea1d0-abee-49f7-a6da-4c3f1238ae10@f94e5909-95d0-46e2-aa32-8f77402298c1@bfa684fc-f267-40a5-a9ca-4db346672180`,
+    `1c0a48de-706c-4965-882c-19a4100e9d7a@3bb576eb-d456-477d-a07d-2895f3ce3893@270de1ea-0832-4294-afdb-c3e8d734ef7f@bf9ea1d0-abee-49f7-a6da-4c3f1238ae10@f94e5909-95d0-46e2-aa32-8f77402298c1@bfa684fc-f267-40a5-a9ca-4db346672180`,
+    `1c0a48de-706c-4965-882c-19a4100e9d7a@3bb576eb-d456-477d-a07d-2895f3ce3893@270de1ea-0832-4294-afdb-c3e8d734ef7f@bf9ea1d0-abee-49f7-a6da-4c3f1238ae10@f94e5909-95d0-46e2-aa32-8f77402298c1@bfa684fc-f267-40a5-a9ca-4db346672180`,
+    `1c0a48de-706c-4965-882c-19a4100e9d7a@3bb576eb-d456-477d-a07d-2895f3ce3893@270de1ea-0832-4294-afdb-c3e8d734ef7f@bf9ea1d0-abee-49f7-a6da-4c3f1238ae10@f94e5909-95d0-46e2-aa32-8f77402298c1@bfa684fc-f267-40a5-a9ca-4db346672180`,
+];
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {

@@ -31,7 +31,14 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 const randomCount = 3;
 let cookiesArr = [], cookie = '', message = '';
-const inviteCodes = ['qSDHMwUOz7onHcMyaju4KmdSXWf0dlv7LVnTt1Wzemo=@iuGNoGYvk9YdEImUAz25Wyzm7oeggrm0JSIYgZdHJGI=', 'iuGNoGYvk9YdEImUAz25Wyzm7oeggrm0JSIYgZdHJGI='];
+const inviteCodes = [
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {

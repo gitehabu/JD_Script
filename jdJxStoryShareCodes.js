@@ -8,8 +8,12 @@
 // 同一个京东账号的好友互助码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
 let shareCodes = [
-  '',//账号一的好友shareCode,不同好友中间用@符号隔开
-  '',//账号二的好友shareCode
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
+    'fAAUS_uZTLhWwEYyZlw070g7mxgVSiFQVE6vEAqKvvw=@czDLo1D06xIzRmA6ViDPHBXAmGjwWU75CNtxiot0evc=@SZjBgw7BUj202dQJPp7o-5cgn8cVPvRgzY-P27H1TmA=@E01nldX4kc-f5nkJjSbf9e1tnBJ-zbDGXxRqnR4G988=',
 ]
 // 判断github action里面是否有京喜故事互助码
 if (process.env.JXSTORY_SHARECODES) {if (process.env.JXSTORY_SHARECODES.indexOf('&') > -1) {
