@@ -277,6 +277,7 @@ async function doTask() {
         await browseShopsInitFun();
     }
     let browseSingleShopInitList = [];
+    console.log("查看1：", taskList)
     taskList.map((item) => {
         if (item.indexOf('browseSingleShopInit') > -1) {
             browseSingleShopInitList.push(item);
