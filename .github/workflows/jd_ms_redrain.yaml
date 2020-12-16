@@ -4,7 +4,7 @@ name: jd_ms_redrain 秒杀红包雨【2020-12-1 到 2020-12-31】
 on:
   workflow_dispatch:
   schedule:
-      - cron: "10 7 * * *"
+      - cron: "10 3 * * *"
   watch:
       types: [started]
   repository_dispatch:
