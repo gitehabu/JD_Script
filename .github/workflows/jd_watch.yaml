@@ -1,10 +1,10 @@
 
 
-name: jd_apple_live 苹果抽奖机【活动于2020-12-14日结束】
+name: jd_watch 京东看一看
 on:
   workflow_dispatch:
   schedule:
-      - cron: "10 0 * * *"
+      - cron: "10 9 * * *"
   watch:
       types: [started]
   repository_dispatch:
@@ -25,7 +25,7 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【苹果抽奖机】'
+      - name: '运行 【京东看一看】'
         run: |
           cd ~/scripts
-          node jd_apple_live.js
+          node jd_watch.js
