@@ -1,6 +1,6 @@
 /**
  宠汪汪邀请助力与赛跑助力脚本，感谢github@Zero-S1提供帮助
- 更新时间：2020-11-29（宠汪汪助力更新Token的配置正则表达式已改）
+ 更新时间：2020-12-16（宠汪汪助力更新Token的配置正则表达式已改）
 
  token时效很短，几个小时就失效了,闲麻烦的放弃就行
  每天拿到token后，可一次性运行完毕即可。
@@ -39,9 +39,9 @@ const $ = new Env('宠汪汪赛跑');
 const JD_BASE_API = `https://draw.jdfcloud.com//pet`;
 //此处填入你需要助力好友的京东用户名
 //下面给出好友邀请助力的示例填写规则
-let invite_pins = ["jd_6cd93e613b0e5,被折叠的记忆33,jd_704a2e5e28a66,jd_45a6b5953b15b,zooooo58,jd_66f5cecc1efcd"];
+let invite_pins = ["jd_768bda175d69f,18316696145_p,jd_51f8ec4809c0f,jd_ZoKhGsiVmSQB,jd_gHaaNzkPDUEX,jd_55c7e48b4e383"];
 //下面给出好友赛跑助力的示例填写规则
-let run_pins = ["jd_6cd93e613b0e5,被折叠的记忆33,jd_704a2e5e28a66,jd_45a6b5953b15b,zooooo58,jd_66f5cecc1efcd"];
+let run_pins = ["jd_768bda175d69f,18316696145_p,jd_51f8ec4809c0f,jd_ZoKhGsiVmSQB,jd_gHaaNzkPDUEX,jd_55c7e48b4e383"];
 // $.LKYLToken = '76fe7794c475c18711e3b47185f114b5' || $.getdata('jdJoyRunToken');
 // $.LKYLToken = $.getdata('jdJoyRunToken');
 //Node.js用户请在jdCookie.js处填写京东ck;
