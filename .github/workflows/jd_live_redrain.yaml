@@ -4,7 +4,7 @@ name: jd_live_redrain 直播红包雨【2020-12-7 到 2020-12-12】
 on:
   workflow_dispatch:
   schedule:
-      - cron: "0 0,9,11,13,15,17,19,20,21,23 * * *"
+      - cron: "50 23,8,10,12,14,16,18,19,20,22 * * *"
   watch:
       types: [started]
   repository_dispatch:
