@@ -9,7 +9,7 @@ on:
   watch:
       types: [started]
   repository_dispatch:
-      types: jd_small_home
+      types: small_home
 jobs:
   build:
     runs-on: ubuntu-latest
