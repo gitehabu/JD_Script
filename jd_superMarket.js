@@ -37,9 +37,12 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
   //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '-4msulYas0O2JsRhE-2TA5XZmBQ@eU9Yar_mb_9z92_WmXNG0w@eU9YaejjYv4g8T2EwnsVhQ',
-  //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'aURoM7PtY_Q@eU9Ya-y2N_5z9DvXwyIV0A@eU9YaOnjYK4j-GvWmXIWhA',
+  'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
+    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
+    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
+    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
+    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
+    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q'
 ]
 
 !(async () => {
@@ -64,8 +67,6 @@ let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好�
 
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
-        } else {
-          $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
         }
         continue
       }
@@ -1382,7 +1383,8 @@ function requireConfig() {
       cookiesArr = cookiesData.map(item => item.cookie);
       cookiesArr.reverse();
       cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
-      cookiesArr.reverse();
+  cookiesArr.reverse();
+  cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
     }
     console.log(`共${cookiesArr.length}个京东账号\n`);
     console.log(`京小超已改版,目前暂不用助力, 故无助力码`)
