@@ -117,16 +117,18 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
 
     console.log('=> test: ', curName, curNickName, nowTime, nowTime > format("21:00:00"), helpFriends.indexOf(hy._AiE.nickName), helpFriends.indexOf(hy._ZL.nickName), helpFriends, curShareCode)
 
-    /**
+
     if (curShareCode === hy._MA.shareCode) {
         if (helpFriends.indexOf(hy._AiE.nickName) > -1) {
             helpArr._MA[helpArr._MA.length] = hy._AiE.shareCode
+        } else if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+            helpArr._MA[helpArr._MA.length] = hy._ZL.shareCode
         } else if ((helpFriends.indexOf(hy._AiE.nickName) < 0) && (nowTime > format("21:00:00"))){ // 超过设定时间
             helpArr._MA[helpArr._MA.length] = hy._zZ.shareCode
         }
     }
 
-
+    /**
     if (curShareCode === hy._zZ.shareCode) {
         if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
             helpArr._zZ[helpArr._zZ.length] = hy._ZL.shareCode
