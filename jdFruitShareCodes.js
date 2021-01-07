@@ -79,7 +79,7 @@ let helpArr = {
     '_BA': [hy._zZ.shareCode, hy._D.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
     '_D': [hy._zZ.shareCode, hy._BA.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
     '_zZ': [hy._D.shareCode, hy._BA.shareCode, hy._FF.shareCode, hy._ZL.shareCode],
-    '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._AiE.shareCode],
+    '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
 }
 exports.hy = function (helpFriends, curNickName, curShareCode) {
     let curName = null
@@ -123,8 +123,8 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
             helpArr._MA[helpArr._MA.length] = hy._AiE.shareCode
         } else if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
             helpArr._MA[helpArr._MA.length] = hy._ZL.shareCode
-        } else if ((helpFriends.indexOf(hy._AiE.nickName) < 0) && (nowTime > format("21:00:00"))){ // 超过设定时间
-            helpArr._MA[helpArr._MA.length] = hy._zZ.shareCode
+        } else if ((helpFriends.indexOf(hy._AiE.nickName) < 0) && (nowTime > format("18:00:00"))){ // 超过设定时间
+            helpArr._MA[helpArr._MA.length] = hy._AiE.shareCode
         }
     }
 
