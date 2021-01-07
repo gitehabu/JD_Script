@@ -4,9 +4,9 @@ let CookieJDs = [
     'pt_pin=jd_55c7e48b4e383;pt_key=AAJf0H5fADBFUYxsC_5HwAqhRh12fSkXUgeNOvvlhu95Iz4T8N_7_BfjKFuB9gE99q0Nw78-L9A;',  // FF
     'pt_pin=jd_gHaaNzkPDUEX;pt_key=AAJf0LWGADCizuf-BaTDnpmtKDkuaXyedXfcON3OBMqMzX04w-lZLdXtqJqogjjNRWASr2iOWm4;',   // WZ
     'pt_pin=jd_ZoKhGsiVmSQB;pt_key=AAJfzhzTADAGkrd7-49e11CEO_LMnMxo8y3GvKta6xC_-7L6vMTQd_2oMGIfTkrNxGagGxDBhXU;',   // BA
-    'pt_pin=jd_51f8ec4809c0f;pt_key=AAJfzg61ADBxh9Io7h644BCa7RA2-a1aoDsC1Y60U1Q5Lk0s0H15lzWqRNcWk10ChiG8ENa16p8;',  // D
-    'pt_pin=18316696145_p;pt_key=AAJfzg4dADAfbKNFrA8UnvOclNwVcBG1CCNffrGXLUH1hx9RZ2JlvAiM7WHeGMb81cbF6F6Z2-I;',     // zZ
-    'pt_pin=jd_768bda175d69f;pt_key=AAJfzg-AADCesVJFw90UOupjmq6Lm2bEzzO2yvMFKztk60GtScjLQfD-TdcMRfg1miXRBPyv144;',  // MA
+    'pt_pin=jd_51f8ec4809c0f;pt_key=AAJf9m8bADCv6YqWIcoJCVWFX2HFvNstLDSPLP--H71ipT82WGCyPYXt8zzECE_3nUqeT0N-obI;',  // D
+    'pt_pin=18316696145_p;pt_key=AAJf9m6aADDg4-15GtgMkSX8BkIP4VVueVxH6LfFBuCkT3l3XxpWw44F8-j3x9KhJsqxO5uuH-Y;',     // zZ
+    'pt_pin=jd_768bda175d69f;pt_key=AAJf9m4TADDJvi43mdRng1RlEDDbL4YURwLJc0mKrhDvYg0nyEV0tKukSsSdhsCdXoeLh3Njkzg;',  // MA
 ]
 
 // 判断github action里面是否有京东ck
