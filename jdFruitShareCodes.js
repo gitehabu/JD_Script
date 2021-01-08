@@ -73,12 +73,20 @@ let hy = {
         shareCode: '10908d829ca944e997200a0d8209783c'
     }
 }
+// let helpArr = {
+//     '_FF': [hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._MA.shareCode],
+//     '_WZ': [hy._zZ.shareCode, hy._D.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode],
+//     '_BA': [hy._zZ.shareCode, hy._D.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
+//     '_D': [hy._zZ.shareCode, hy._BA.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
+//     '_zZ': [hy._D.shareCode, hy._BA.shareCode, hy._FF.shareCode, hy._ZL.shareCode],
+//     '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
+// }
 let helpArr = {
-    '_FF': [hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._MA.shareCode],
-    '_WZ': [hy._zZ.shareCode, hy._D.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode],
-    '_BA': [hy._zZ.shareCode, hy._D.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
-    '_D': [hy._zZ.shareCode, hy._BA.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
-    '_zZ': [hy._D.shareCode, hy._BA.shareCode, hy._FF.shareCode, hy._ZL.shareCode],
+    '_FF': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
+    '_WZ': [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode],
+    '_BA': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
+    '_D': [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode],
+    '_zZ': [hy._MA.shareCode, hy._FF.shareCode, hy._ZL.shareCode],
     '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
 }
 exports.hy = function (helpFriends, curNickName, curShareCode) {
@@ -118,6 +126,7 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
     console.log('=> test: ', curName, curNickName, nowTime, nowTime > format("21:00:00"), helpFriends.indexOf(hy._AiE.nickName), helpFriends.indexOf(hy._ZL.nickName), helpFriends, curShareCode)
 
 
+    /**
     if (curShareCode === hy._MA.shareCode) {
         if (helpFriends.indexOf(hy._AiE.nickName) > -1) {
             helpArr._MA[helpArr._MA.length] = hy._AiE.shareCode
@@ -127,6 +136,7 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
             helpArr._MA[helpArr._MA.length] = hy._AiE.shareCode
         }
     }
+     */
 
     /**
     if (curShareCode === hy._zZ.shareCode) {
