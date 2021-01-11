@@ -86,7 +86,7 @@ let helpArr = {
     '_WZ': [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode],
     '_BA': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
     '_D': [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode],
-    '_zZ': [hy._MA.shareCode, hy._FF.shareCode, hy._ZL.shareCode],
+    '_zZ': [hy._MA.shareCode, hy._FF.shareCode],
     '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
 }
 exports.hy = function (helpFriends, curNickName, curShareCode) {
@@ -138,15 +138,16 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
     }
      */
 
-    /**
     if (curShareCode === hy._zZ.shareCode) {
-        if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+        // if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+        //     helpArr._zZ[helpArr._zZ.length] = hy._ZL.shareCode
+        // } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){
+        //     helpArr._zZ[helpArr._zZ.length] = hy._MA.shareCode
+        // }
+        if ((helpFriends.indexOf(hy._ZL.nickName) > -1) || (nowTime > format("11:00:00"))) {
             helpArr._zZ[helpArr._zZ.length] = hy._ZL.shareCode
-        } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){
-            helpArr._zZ[helpArr._zZ.length] = hy._MA.shareCode
         }
     }
-     */
 
     return helpArr[curName]
 }

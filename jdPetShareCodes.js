@@ -66,8 +66,8 @@ let arr = [
     `${hy._zZ.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}@${hy._MA.shareCode}`,        // _WZ
     `${hy._zZ.shareCode}@${hy._D.shareCode}@${hy._MA.shareCode}@${hy._WZ.shareCode}`,        // _BA
     `${hy._zZ.shareCode}@${hy._BA.shareCode}@${hy._MA.shareCode}@${hy._WZ.shareCode}`,       // _D
-    `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._ZL.shareCode}`,        // _zZ
-    `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._ZL.shareCode}`,        // _MA
+    `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}}`,        // _zZ
+    `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}}`,        // _MA
 ]
 
 exports.hy = function (helpFriends, curNickName, curShareCode) {
@@ -98,23 +98,27 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
     let nowTime = format("HH:mm:ss", new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000)
     console.log('=> test: ', nowTime, nowTime > format("21:00:00"), helpFriends.indexOf(hy._ZL.nickName), helpFriends, curNickName, curShareCode)
 
-/**
     if (curShareCode === hy._MA.shareCode) {
-        if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+        // if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+        //     arr[5] += `@${hy._ZL.shareCode}`
+        // } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){ // 超过设定时间
+        //     arr[5] += `@${hy._zZ.shareCode}`
+        // }
+        if ((helpFriends.indexOf(hy._ZL.nickName)) > -1 || (nowTime > format("11:00:00"))) {
             arr[5] += `@${hy._ZL.shareCode}`
-        } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){ // 超过设定时间
-            arr[5] += `@${hy._zZ.shareCode}`
         }
     }
 
     if (curShareCode === hy._zZ.shareCode) {
-        if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+        // if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+        //     arr[4] += `@${hy._ZL.shareCode}`
+        // } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){
+        //     arr[4] += `@${hy._MA.shareCode}`
+        // }
+        if ((helpFriends.indexOf(hy._ZL.nickName)) > -1 || (nowTime > format("11:00:00"))) {
             arr[4] += `@${hy._ZL.shareCode}`
-        } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){
-            arr[4] += `@${hy._MA.shareCode}`
         }
     }
- */
 
     return arr
 }
