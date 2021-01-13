@@ -82,7 +82,7 @@ let helpArr = {
     '_BA': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode],
     '_D': [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._WZ.shareCode],
     '_MA': [hy._FF.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
-    '_zZ': [hy._MA.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._ZL.shareCode, hy._D.shareCode, hy._BA.shareCode],
+    '_zZ': [hy._FF.shareCode, hy._WZ.shareCode],
 }
 
 exports.hy = function (helpFriends, curNickName, curShareCode) {
@@ -142,6 +142,10 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
 
     if ((curShareCode === hy._MA.shareCode) && (nowTime > format("17:00:00"))) {
         helpArr['_MA'].push(hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode)
+    }
+
+    if ((curShareCode === hy._zZ.shareCode) && (nowTime > format("17:00:00"))) {
+        helpArr['_zZ'].push(hy._MA.shareCode, hy._ZL.shareCode, hy._D.shareCode, hy._BA.shareCode)
     }
 
     return helpArr[curName]

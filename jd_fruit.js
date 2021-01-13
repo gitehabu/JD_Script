@@ -370,14 +370,15 @@ async function doDailyTask() {
     }
 
     //给好友浇水
-    if (!$.farmTask.waterFriendTaskInit.f) {
-        // await doFriendsWater();
-        // if ($.farmTask.waterFriendTaskInit.waterFriendCountKey < $.farmTask.waterFriendTaskInit.waterFriendMax) {
-        //   await doFriendsWater();
-        // }
-    } else {
-        console.log(`给${$.farmTask.waterFriendTaskInit.waterFriendMax}个好友浇水任务已完成\n`)
-    }
+    // if (!$.farmTask.waterFriendTaskInit.f) {
+    //     // await doFriendsWater();
+    //     // if ($.farmTask.waterFriendTaskInit.waterFriendCountKey < $.farmTask.waterFriendTaskInit.waterFriendMax) {
+    //     //   await doFriendsWater();
+    //     // }
+    // } else {
+    //     console.log(`给${$.farmTask.waterFriendTaskInit.waterFriendMax}个好友浇水任务已完成\n`)
+    // }
+
     await doFriendsWater();
 
     // await Promise.all([
@@ -868,27 +869,33 @@ async function doFriendsWater() {
 
     let needWaterFriends =  $.friendList.friends || [];
     if ($.friendList.friends && $.friendList.friends.length > 0) {
-        let response = $.friendList
+        let date = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000
+        let nowTime = format("yyyy-MM-dd", date)
+
+        let _FF = { code: '289f2cb96f284588a8f3b33f0d023bf0' }
+        if (($.farmInfo.farmUserPro.shareCode === _FF.code) && (format("HH:mm:ss", date) < format("17:00:00"))) {
+            return
+        }
+
+
         let _zZ = {
-            name: '.zZ',
             code: '6e74c86a47f84db5832b33c76fbe32a8'
         }
 
         let _D = {
-            name: 'D',
             code: '33819377bfd44628b3fe7607fb5ea090'
         }
 
         let _MA = {
-            name: '三月',
             code: '597f1a10a91b473ab89f03cafa88a9a4'
         }
 
         let _BA = {
-            name: '_BA_',
             code: 'b0f5d0c06eb74dc39d62b336264df3fe'
         }
-        let nowTime = format("yyyy-MM-dd", new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000)
+
+
+        let response = $.friendList
         if ($.farmInfo.farmUserPro.shareCode === _zZ.code) {
             let arr2 = (response.friendInfos[0][nowTime] || []).map(function(item){return item.shareCode})
             arr2.push(_MA.code)
