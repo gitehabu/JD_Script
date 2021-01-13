@@ -52,6 +52,7 @@ let randomCount = $.isNode() ? 20 : 5;
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
+      jdPlantBeanShareArr[i] = '4npkonnsy7xi3dnumldoxwni4nkx7dsaomldgwa@wqv6bbkq5emb2mlzqqltoeglly3h7wlwy7o5jii@mlrdw3aw26j3wmr3ewg2v6uoanmddjzrqf7gdqa@h3cggkcy6agkgwxxzp6ziqvg7mhrnn3kvedkwyy@mlrdw3aw26j3wgzjipsxgonaoyr2evrdsifsziy@mlrdw3aw26j3wys4fludgopxas2pzj5xqnfrmwa'
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
@@ -543,7 +544,7 @@ function shareCodesFormat() {
     if (jdPlantBeanShareArr[$.index - 1]) {
       newShareCodes = jdPlantBeanShareArr[$.index - 1].split('@');
     } else {
-      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+      console.log(`由于您第${$.index}个京东账号GitHub未配置shareCode,将使用脚本助力码\n`)
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }

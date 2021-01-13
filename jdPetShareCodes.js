@@ -65,17 +65,34 @@ let hy = {
     }
 }
 
-let arr = [
-    `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,                           // _FF
-    `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._WZMAMA.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,   // _WZ
-    `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._D.shareCode}@${hy._WZ.shareCode}`,                           // _BA
-    `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._BA.shareCode}@${hy._WZ.shareCode}`,                          // _D
-    `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._ZL.shareCode}`,       // _zZ
-    `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._WZMAMA.shareCode}`,   // _MA
-    `${hy._WZ.shareCode}@${hy._MA.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,                           // _WZMAMA
-]
+// let arr = [
+//     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,                           // _FF
+//     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._WZMAMA.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,   // _WZ
+//     `${hy._WZ.shareCode}@${hy._MA.shareCode}`,                                                                  // _WZMAMA
+//     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._D.shareCode}@${hy._WZ.shareCode}`,                           // _BA
+//     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._BA.shareCode}@${hy._WZ.shareCode}`,                          // _D
+//     `${hy._MA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._ZL.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,           // _zZ
+//     `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._WZMAMA.shareCode}`,                           // _MA
+// ]
+
+let helpArr = {
+    '_FF': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode],
+    '_WZ': [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode, hy._D.shareCode, hy._BA.shareCode],
+    '_WZMAMA': [hy._WZ.shareCode, hy._MA.shareCode],
+    '_BA': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode],
+    '_D': [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._WZ.shareCode],
+    '_MA': [hy._FF.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
+    '_zZ': [hy._MA.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._ZL.shareCode, hy._D.shareCode, hy._BA.shareCode],
+}
 
 exports.hy = function (helpFriends, curNickName, curShareCode) {
+    let curName = null
+    for (let key in hy){
+        if (hy[key].shareCode === curShareCode) {
+            curName = key
+            break
+        }
+    }
     let format = function(fmt, date){
         fmt = fmt ||  "yyyy-MM-dd HH:mm:ss";
         if(typeof date === 'string') date = new Date(date.replace(/-/g,'/'));
@@ -120,8 +137,12 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
     // }
 
     if ((curShareCode === hy._WZMAMA.shareCode) && (nowTime > format("17:00:00"))) {
-        arr[6] += `@${hy._zZ.shareCode}`
+        helpArr['_WZMAMA'].push(hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode)
     }
 
-    return arr
+    if ((curShareCode === hy._MA.shareCode) && (nowTime > format("17:00:00"))) {
+        helpArr['_MA'].push(hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode)
+    }
+
+    return helpArr[curName]
 }

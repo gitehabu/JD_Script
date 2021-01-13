@@ -35,15 +35,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
 //助力好友分享码
 //此此内容是IOS用户下载脚本到本地使用，填写互助码的地方，同一京东账号的好友互助码请使用@符号隔开。
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
-let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
-  //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q'
-]
+let shareCodes = []
 
 !(async () => {
   await requireConfig();
@@ -53,6 +45,7 @@ let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好�
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
+      shareCodes[i] = 'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q';
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.coincount = 0;//收取了多少个蓝币
@@ -1355,7 +1348,7 @@ function shareCodesFormat() {
     if (jdSuperMarketShareArr[$.index - 1]) {
       newShareCodes = jdSuperMarketShareArr[$.index - 1].split('@');
     } else {
-      console.log(`由于您未提供与京京东账号相对应的shareCode,下面助力将采纳本脚本自带的助力码\n`)
+      console.log(`由于您第${$.index}个京东账号GitHub未配置shareCode,将使用脚本助力码\n`)
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }

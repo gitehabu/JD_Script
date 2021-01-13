@@ -7,14 +7,7 @@
 // github action用户的好友互助码填写到Action->Settings->Secrets->new Secret里面(Name填写 PLANT_BEAN_SHARECODES(此处的Name必须按此来写,不能随意更改),内容处填写互助码,填写规则如下)
 // 同一个京东账号的好友互助码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
-let shareCodes = [
-    `P04z54XCjVWnYaS5m9cZ2f-1S4exNSbvS-ysJc@P04z54XCjVWnYaS5jQAC2H-23VMlC9b3LM@P04z54XCjVWnYaS5m9cZ2X5i3Qfxjk8lyyNIpw@P04z54XCjVWnYaS5m9cZwqnpiQ91g1Bt9HOfw@P04z54XCjVWnYaS5m9cZzeAjC00370uxryRwg@P04z54XCjVWnYaS5m9cZ2X9jnsfkSdVqUE7LpM`,
-    `P04z54XCjVWnYaS5m9cZ2f-1S4exNSbvS-ysJc@P04z54XCjVWnYaS5jQAC2H-23VMlC9b3LM@P04z54XCjVWnYaS5m9cZ2X5i3Qfxjk8lyyNIpw@P04z54XCjVWnYaS5m9cZwqnpiQ91g1Bt9HOfw@P04z54XCjVWnYaS5m9cZzeAjC00370uxryRwg@P04z54XCjVWnYaS5m9cZ2X9jnsfkSdVqUE7LpM`,
-    `P04z54XCjVWnYaS5m9cZ2f-1S4exNSbvS-ysJc@P04z54XCjVWnYaS5jQAC2H-23VMlC9b3LM@P04z54XCjVWnYaS5m9cZ2X5i3Qfxjk8lyyNIpw@P04z54XCjVWnYaS5m9cZwqnpiQ91g1Bt9HOfw@P04z54XCjVWnYaS5m9cZzeAjC00370uxryRwg@P04z54XCjVWnYaS5m9cZ2X9jnsfkSdVqUE7LpM`,
-    `P04z54XCjVWnYaS5m9cZ2f-1S4exNSbvS-ysJc@P04z54XCjVWnYaS5jQAC2H-23VMlC9b3LM@P04z54XCjVWnYaS5m9cZ2X5i3Qfxjk8lyyNIpw@P04z54XCjVWnYaS5m9cZwqnpiQ91g1Bt9HOfw@P04z54XCjVWnYaS5m9cZzeAjC00370uxryRwg@P04z54XCjVWnYaS5m9cZ2X9jnsfkSdVqUE7LpM`,
-    `P04z54XCjVWnYaS5m9cZ2f-1S4exNSbvS-ysJc@P04z54XCjVWnYaS5jQAC2H-23VMlC9b3LM@P04z54XCjVWnYaS5m9cZ2X5i3Qfxjk8lyyNIpw@P04z54XCjVWnYaS5m9cZwqnpiQ91g1Bt9HOfw@P04z54XCjVWnYaS5m9cZzeAjC00370uxryRwg@P04z54XCjVWnYaS5m9cZ2X9jnsfkSdVqUE7LpM`,
-    `P04z54XCjVWnYaS5m9cZ2f-1S4exNSbvS-ysJc@P04z54XCjVWnYaS5jQAC2H-23VMlC9b3LM@P04z54XCjVWnYaS5m9cZ2X5i3Qfxjk8lyyNIpw@P04z54XCjVWnYaS5m9cZwqnpiQ91g1Bt9HOfw@P04z54XCjVWnYaS5m9cZzeAjC00370uxryRwg@P04z54XCjVWnYaS5m9cZ2X9jnsfkSdVqUE7LpM`,
-]
+let shareCodes = []
 // 判断github action里面是否有东东工厂互助码
 if (process.env.DDFACTORY_SHARECODES) {
   if (process.env.DDFACTORY_SHARECODES.indexOf('&') > -1) {

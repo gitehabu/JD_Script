@@ -105,7 +105,7 @@ async function jdPet() {
         $.taskInfo = $.taskInit.result;
 
         await masterHelpInit();     // 获取助力信息
-        await shareCodesFormat();   // 助力列表
+        // await shareCodesFormat();   // 助力列表
         await slaveHelp();          // 助力好友
         await petSport();       // 遛弯
         await doTask();         // 做日常任务
@@ -156,36 +156,39 @@ async function masterHelpInit() {
         }
     }
 }
-// 助力列表
-function shareCodesFormat() {
-    const sCode = $.isNode() ? require('./jdPetShareCodes.js') : '';
-    jdPetShareArr = sCode.hy(helpFriends, $.nickName, $.petInfo.shareCode)
-    return new Promise(async resolve => {
-        // console.log(`第${$.index}个京东账号的助力码:::${jdPetShareArr[$.index - 1]}`)
-        newShareCodes = [];
-        if (jdPetShareArr[$.index - 1]) {
-            newShareCodes = jdPetShareArr[$.index - 1].split('@');
-        } else {
-            console.log(`❌ 账号 ${$.index} - ${$.nickName} 未提供助力shareCode\n`)
-            // console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
-            // const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
-            // newShareCodes = shareCodes[tempIndex].split('@');
-        }
-        // const readShareCodeRes = await readShareCode();
-        // if (readShareCodeRes && readShareCodeRes.code === 200) {
-        //     newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
-        // }
-        resolve();
-    })
-}
+// // 助力列表
+// function shareCodesFormat() {
+//     const sCode = $.isNode() ? require('./jdPetShareCodes.js') : '';
+//     jdPetShareArr = sCode.hy(helpFriends, $.nickName, $.petInfo.shareCode)
+//     return new Promise(async resolve => {
+//         // console.log(`第${$.index}个京东账号的助力码:::${jdPetShareArr[$.index - 1]}`)
+//         newShareCodes = [];
+//         if (jdPetShareArr[$.index - 1]) {
+//             newShareCodes = jdPetShareArr[$.index - 1].split('@');
+//         } else {
+//             console.log(`❌ 账号 ${$.index} - ${$.nickName} 未提供助力shareCode\n`)
+//             // console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+//             // const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
+//             // newShareCodes = shareCodes[tempIndex].split('@');
+//         }
+//         // const readShareCodeRes = await readShareCode();
+//         // if (readShareCodeRes && readShareCodeRes.code === 200) {
+//         //     newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
+//         // }
+//         resolve();
+//     })
+// }
 /**
  * 助力好友, 暂时支持一个好友, 需要拿到shareCode
  * shareCode为你要助力的好友的
  * 运行脚本时你自己的shareCode会在控制台输出, 可以将其分享给他人
  */
 async function slaveHelp() {
-    let helpPeoples = '';
+    const sCode = $.isNode() ? require('./jdPetShareCodes.js') : '';
+    newShareCodes = sCode.hy(helpFriends, $.nickName, $.petInfo.shareCode) || []
     console.log(`=> 账号${$.index} - ${$.nickName} 即将开始为好友助力, 助力列表： ${JSON.stringify(newShareCodes)}`)
+
+    let helpPeoples = '';
     for (let code of newShareCodes) {
         if (!code) continue;
         let response = await request(arguments.callee.name.toString(), {'shareCode': code});

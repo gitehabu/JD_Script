@@ -34,14 +34,7 @@ const randomCount = $.isNode() ? 20 : 5;
 let tuanActiveId = `6S9y4sJUfA2vPQP6TLdVIQ==`;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '';
-const inviteCodes = [
-    'EvvV1F9iHb798vnfhpDqOw==@wBW3H2bPCTFtIVG7R0z1Tg==@MMID6yrQIWKIVmSEHz3MVg==',
-    'EvvV1F9iHb798vnfhpDqOw==@wBW3H2bPCTFtIVG7R0z1Tg==@MMID6yrQIWKIVmSEHz3MVg==',
-    'EvvV1F9iHb798vnfhpDqOw==@wBW3H2bPCTFtIVG7R0z1Tg==@MMID6yrQIWKIVmSEHz3MVg==',
-    'EvvV1F9iHb798vnfhpDqOw==@wBW3H2bPCTFtIVG7R0z1Tg==@MMID6yrQIWKIVmSEHz3MVg==',
-    'EvvV1F9iHb798vnfhpDqOw==@wBW3H2bPCTFtIVG7R0z1Tg==@MMID6yrQIWKIVmSEHz3MVg==',
-    'EvvV1F9iHb798vnfhpDqOw==@wBW3H2bPCTFtIVG7R0z1Tg==@MMID6yrQIWKIVmSEHz3MVg==',
-];
+const inviteCodes = [];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -67,6 +60,7 @@ if ($.isNode()) {
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
+      inviteCodes[i] = 'EvvV1F9iHb798vnfhpDqOw==@wBW3H2bPCTFtIVG7R0z1Tg==@MMID6yrQIWKIVmSEHz3MVg==';
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
@@ -1327,7 +1321,7 @@ function shareCodesFormat() {
     if ($.shareCodesArr[$.index - 1]) {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
-      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+      console.log(`由于您第${$.index}个京东账号GitHub未配置shareCode,将使用脚本助力码\n`)
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }

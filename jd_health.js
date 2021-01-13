@@ -42,14 +42,7 @@ if ($.isNode()) {
   cookiesArr.reverse();
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [
-    `P04z54XCjVUnoaW5m9cZ2f-1S4exAZ71bzAeSU@P04z54XCjVUnoaW5jQAC2H-23VMlDpPEmE@P04z54XCjVUnoaW5m9cZ2X5i3Qfxtz_dRK4Shw@P04z54XCjVUnoaW5m9cZwqnpiQ91mM2hEJuvg`,
-    `P04z54XCjVUnoaW5m9cZ2f-1S4exAZ71bzAeSU@P04z54XCjVUnoaW5jQAC2H-23VMlDpPEmE@P04z54XCjVUnoaW5m9cZ2X5i3Qfxtz_dRK4Shw@P04z54XCjVUnoaW5m9cZwqnpiQ91mM2hEJuvg`,
-    `P04z54XCjVUnoaW5m9cZ2f-1S4exAZ71bzAeSU@P04z54XCjVUnoaW5jQAC2H-23VMlDpPEmE@P04z54XCjVUnoaW5m9cZ2X5i3Qfxtz_dRK4Shw@P04z54XCjVUnoaW5m9cZwqnpiQ91mM2hEJuvg`,
-    `P04z54XCjVUnoaW5m9cZ2f-1S4exAZ71bzAeSU@P04z54XCjVUnoaW5jQAC2H-23VMlDpPEmE@P04z54XCjVUnoaW5m9cZ2X5i3Qfxtz_dRK4Shw@P04z54XCjVUnoaW5m9cZwqnpiQ91mM2hEJuvg`,
-    `P04z54XCjVUnoaW5m9cZ2f-1S4exAZ71bzAeSU@P04z54XCjVUnoaW5jQAC2H-23VMlDpPEmE@P04z54XCjVUnoaW5m9cZ2X5i3Qfxtz_dRK4Shw@P04z54XCjVUnoaW5m9cZwqnpiQ91mM2hEJuvg`,
-    `P04z54XCjVUnoaW5m9cZ2f-1S4exAZ71bzAeSU@P04z54XCjVUnoaW5jQAC2H-23VMlDpPEmE@P04z54XCjVUnoaW5m9cZ2X5i3Qfxtz_dRK4Shw@P04z54XCjVUnoaW5m9cZwqnpiQ91mM2hEJuvg`
-];
+const inviteCodes = [];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
@@ -59,6 +52,7 @@ const inviteCodes = [
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
+      inviteCodes[i] = `P04z54XCjVUnoaW5m9cZ2f-1S4exAZ71bzAeSU@P04z54XCjVUnoaW5jQAC2H-23VMlDpPEmE@P04z54XCjVUnoaW5m9cZ2X5i3Qfxtz_dRK4Shw@P04z54XCjVUnoaW5m9cZwqnpiQ91mM2hEJuvg`;
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
@@ -293,7 +287,7 @@ function shareCodesFormat() {
     if ($.shareCodesArr[$.index - 1]) {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
-      console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
+      console.log(`由于您第${$.index}个京东账号GitHub未配置shareCode,将使用脚本助力码\n`)
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }

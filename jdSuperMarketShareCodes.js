@@ -7,14 +7,7 @@
 // github action用户的好友互助码填写到Action->Settings->Secrets->new Secret里面(Name填写 SuperMarketShareCodes(此处的Name必须按此来写,不能随意更改),内容处填写互助码,填写规则如下)
 // 同一个京东账号的好友互助码用@符号隔开,不同京东账号之间用&符号或者换行隔开,下面给一个示例
 // 如: 京东账号1的shareCode1@京东账号1的shareCode2&京东账号2的shareCode1@京东账号2的shareCode2
-let SuperMarketShareCodes = [
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q',
-    'eU9Ya-q6NKh38GnQn3UagA@IhM0beq0b_on9Wu6iw@eU9Yae3kbql19WbVwiATgA@eU9YBrPJPotlqAiIqBJh@eU9YO5TjN4Jsqg6hrgZ7@eU9YaenhYaki-TzRnnAb1Q'
-]
+let SuperMarketShareCodes = []
 // 判断github action里面是否有京小超商圈互助码
 if (process.env.SUPERMARKET_SHARECODES) {
   if (process.env.SUPERMARKET_SHARECODES.indexOf('&') > -1) {
