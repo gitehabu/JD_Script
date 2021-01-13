@@ -82,12 +82,13 @@ let hy = {
 //     '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
 // }
 let helpArr = {
-    '_FF': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
-    '_WZ': [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode],
-    '_BA': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
+    '_FF': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode],
+    '_WZ': [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode, hy._D.shareCode, hy._BA.shareCode],
+    '_BA': [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode],
     '_D': [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode],
-    '_zZ': [hy._MA.shareCode, hy._FF.shareCode],
-    '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
+    '_zZ': [hy._D.shareCode, hy._FF.shareCode, hy._ZL.shareCode, hy._MA.shareCode, hy._BA.shareCode],
+    '_MA': [hy._FF.shareCode, hy._WZ.shareCode],
+    '_WZMAMA': [hy._WZ.shareCode, hy._MA.shareCode],
 }
 exports.hy = function (helpFriends, curNickName, curShareCode) {
     let curName = null
@@ -138,15 +139,16 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
     }
      */
 
-    if (curShareCode === hy._zZ.shareCode) {
-        // if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
-        //     helpArr._zZ[helpArr._zZ.length] = hy._ZL.shareCode
-        // } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){
-        //     helpArr._zZ[helpArr._zZ.length] = hy._MA.shareCode
-        // }
-        if ((helpFriends.indexOf(hy._ZL.nickName) > -1) || (nowTime > format("11:00:00"))) {
-            helpArr._zZ[helpArr._zZ.length] = hy._ZL.shareCode
-        }
+    // if (curShareCode === hy._zZ.shareCode) {
+    //     if (helpFriends.indexOf(hy._ZL.nickName) > -1) {
+    //         helpArr._zZ[helpArr._zZ.length] = hy._ZL.shareCode
+    //     } else if ((helpFriends.indexOf(hy._ZL.nickName) < 0) && (nowTime > format("21:00:00"))){
+    //         helpArr._zZ[helpArr._zZ.length] = hy._MA.shareCode
+    //     }
+    // }
+
+    if ((curShareCode === hy._MA.shareCode) && (nowTime > format("17:00:00"))) {
+        helpArr['_MA'].push(hy._zZ.shareCode, hy._WZMAMA.shareCode, hy._D.shareCode, hy._BA.shareCode)
     }
 
     return helpArr[curName]
