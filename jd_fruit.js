@@ -873,7 +873,11 @@ async function doFriendsWater() {
         let nowTime = format("yyyy-MM-dd", date)
 
         let _FF = { code: '289f2cb96f284588a8f3b33f0d023bf0' }
-        if (($.farmInfo.farmUserPro.shareCode === _FF.code) && (format("HH:mm:ss", date) < format("17:00:00"))) {
+        if (($.farmInfo.farmUserPro.shareCode === _FF.code) && (format("HH:mm:ss", date) < format("11:00:00"))) {
+            return
+        }
+        let _WZMM = { code: '10908d829ca944e997200a0d8209783c'}
+        if (($.farmInfo.farmUserPro.shareCode === _WZMM.code) && (format("HH:mm:ss", date) < format("11:00:00"))) {
             return
         }
 
