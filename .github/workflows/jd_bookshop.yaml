@@ -1,14 +1,14 @@
 
 
-name: jd_jdh 京东健康
+name: jd_bookshop 口袋书店
 on:
   workflow_dispatch:
   schedule:
-      - cron: "10 8 * * *"
+      - cron: "1 0,4,10 * * *"
   watch:
       types: [started]
   repository_dispatch:
-      types: jdh
+      types: jd_bookshop
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【京东健康】'
+      - name: '运行 【口袋书店】'
         run: |
           cd ~/scripts
-          node jd_jdh.js
+          node jd_bookshop.js

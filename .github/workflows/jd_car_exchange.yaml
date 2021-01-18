@@ -1,14 +1,14 @@
 
 
-name: jd_health 健康抽奖机【活动于2020-12-31日结束】
+name: jd_car_exchange 京东汽车兑换
 on:
   workflow_dispatch:
   schedule:
-      - cron: "10 0 * * *"
+      - cron: "0 0 * * *"
   watch:
       types: [started]
   repository_dispatch:
-      types: health
+      types: jd_car_exchange
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【健康抽奖机】'
+      - name: '运行 【京东汽车兑换】'
         run: |
           cd ~/scripts
-          node jd_health.js
+          node jd_car_exchange.js

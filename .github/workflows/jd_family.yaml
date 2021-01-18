@@ -1,14 +1,14 @@
 
 
-name: jr_sign 金融打卡领年终奖
+name: jd_family 京东家庭号
 on:
   workflow_dispatch:
   schedule:
-      - cron: "10 6 * * *"
+      - cron: "1 * * * *"
   watch:
       types: [started]
   repository_dispatch:
-      types: sign
+      types: jd_family
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【金融打卡领年终奖】'
+      - name: '运行 【京东家庭号】'
         run: |
           cd ~/scripts
-          node jr_sign.js
+          node jd_family.js

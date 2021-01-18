@@ -1,14 +1,14 @@
 
 
-name: jd_ms_redrain 秒杀红包雨【2020-12-1 到 2020-12-31】
+name: jd_nh 京东年货节
 on:
   workflow_dispatch:
   schedule:
-      - cron: "10 3 * * *"
+      - cron: "1 17 * * *"
   watch:
       types: [started]
   repository_dispatch:
-      types: ms_redrain
+      types: jd_nh
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【秒杀红包雨】'
+      - name: '运行 【京东年货节】'
         run: |
           cd ~/scripts
-          node jd_ms_redrain.js
+          node jd_nh.js

@@ -1,14 +1,14 @@
 
 
-name: jd_ds 京东代属
+name: jd_jxnc 京喜农场
 on:
   workflow_dispatch:
   schedule:
-      - cron: "10 7 * * *"
+      - cron: "0 23,3,10 * * *"
   watch:
       types: [started]
   repository_dispatch:
-      types: ds
+      types: jd_jxnc
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【京东代属】'
+      - name: '运行 【京喜农场】'
         run: |
           cd ~/scripts
-          node jd_ds.js
+          node jd_jxnc.js
