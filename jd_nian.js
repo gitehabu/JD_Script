@@ -86,7 +86,7 @@ async function jdNian() {
   await getHomeData()
   if(!$.secretp) return
   await map()
-  await queryMaterials()
+  // await queryMaterials()
   await getTaskList()
   await $.wait(1000)
   await doTask()
