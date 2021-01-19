@@ -39,7 +39,6 @@ if ($.isNode()) {
   };
 } else {
   let cookiesData = $.getdata('CookiesJD') || "[]";
-  inviteCodes[i] = '';
   cookiesData = jsonParse(cookiesData);
   cookiesArr = cookiesData.map(item => item.cookie);
   cookiesArr.reverse();
@@ -58,6 +57,7 @@ if ($.isNode()) {
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
+      inviteCodes[i] = '';
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
