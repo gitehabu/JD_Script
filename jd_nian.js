@@ -465,8 +465,8 @@ function getTaskList(body={}) {
             data = JSON.parse(data);
             if (data.data.bizCode === 0) {
               if(JSON.stringify(body)==="{}") {
+                $.taskVos = data.data.result.taskVos;//任务列表
                 console.log(`您的好友助力码为${data.data.result.inviteId}`)
-                  $.taskVos = data.data.result.taskVos;//任务列表
                }
               // $.userInfo = data.data.result.userInfo;
             }
