@@ -57,7 +57,7 @@ if ($.isNode()) {
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
-      inviteCodes[i] = '';
+      inviteCodes[i] = '0ae5f695ce834918aaa5d7ec56f29160@581bb90d224c4b9280b90482b567b852@0ca82465721448b69ec37326d6abf552@c5c18cc430fe4d90b6c5ac06681a74b9';
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;

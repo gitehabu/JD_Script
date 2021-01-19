@@ -6,8 +6,8 @@ let CookieJDs = [
     'pt_pin=jd_6118be1810ae2;pt_key=AAJf_q0FADBGG3zjBt-_rfoejZqz6Uks5MVdBFQrsk_NmqJdidQtRKsqfDiyfDdO6H_-kQHKXPg;',  // WZMAMA
     'pt_pin=jd_ZoKhGsiVmSQB;pt_key=AAJf9vykADBnUYmww3UVhQsSxf2JbAEZVPYwaBmCK5ZdEpMiJeifE-gehvxszZ-n31u78Z4j_oM;',   // BA
     'pt_pin=jd_768bda175d69f;pt_key=AAJf9m4TADDJvi43mdRng1RlEDDbL4YURwLJc0mKrhDvYg0nyEV0tKukSsSdhsCdXoeLh3Njkzg;',  // MA
-    'pt_pin=jd_51f8ec4809c0f;pt_key=AAJf9m8bADCv6YqWIcoJCVWFX2HFvNstLDSPLP--H71ipT82WGCyPYXt8zzECE_3nUqeT0N-obI;',  // D
     'pt_pin=18316696145_p;pt_key=AAJf9m6aADDg4-15GtgMkSX8BkIP4VVueVxH6LfFBuCkT3l3XxpWw44F8-j3x9KhJsqxO5uuH-Y;',     // zZ
+    'pt_pin=jd_51f8ec4809c0f;pt_key=AAJf9m8bADCv6YqWIcoJCVWFX2HFvNstLDSPLP--H71ipT82WGCyPYXt8zzECE_3nUqeT0N-obI;',  // D
 ]
 
 // 判断github action里面是否有京东ck
