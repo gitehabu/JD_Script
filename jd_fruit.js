@@ -881,8 +881,17 @@ async function doFriendsWater() {
         }
 
         let response = $.friendList
-        console.log(`【为我浇水的好友】${JSON.stringify(response.friendInfos[0])}`)
-        console.log(`【今日为我浇水的好友】${JSON.stringify(response.friendInfos[0][nowTime] || [])}`)
+        console.log(`【为我浇水的好友】${JSON.stringify(response.friendInfos)}`)
+        console.log(`【今日为我浇水的好友】${JSON.stringify(response.friendInfos[0][nowTime].name)}`)
+
+        if ($.farmInfo.farmUserPro.shareCode === '10908d829ca944e997200a0d8209783c') {
+            let arr2 = (response.friendInfos[0][nowTime] || []).map(function(item){return item.shareCode})
+            arr2.push('b6b55daa037c4eacac258b717b36aea2', '597f1a10a91b473ab89f03cafa88a9a4')
+            let shareCodeArr = Array.from(new Set(arr2))
+            needWaterFriends = response.friends.filter(function (item) {
+                return (shareCodeArr.indexOf(item.shareCode) > -1)
+            })
+        }
 
         if ($.farmInfo.farmUserPro.shareCode === '2e504781a7f049ce850554ef685511b6') {
             let arr2 = (response.friendInfos[0][nowTime] || []).map(function(item){return item.shareCode})
