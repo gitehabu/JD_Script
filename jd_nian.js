@@ -55,7 +55,7 @@ const inviteCodes = [];
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
-      inviteCodes[i] = `cgxZLmmBJbzc4wjIDADGr6PcWhDUT2IKeba1t8aAzQE5EXfYng@cgxZdTXtI7zSuFqYCQKsu7DTChBhLYfhu00_2a8_ov_gmyGLaZ-bBGGTHYA@cgxZdTXtIbuM4luaDA2p5qWctl9pbDvXxUrXqDqO6UK1P7Y2IoGdIBondPc@cgxZdTXtTuWhsnmKUWP0jCy3QiaOyhwwSt0a_cOvZLJdV9tgbqraKbs@cgxZdTXtIrvb4lycCQ2o726_V6e49JBIaMEctc3nZIslucpLeKprCsqRtqE@cgxZdTXtc8KLu3CDU2Xdir2c4rCnGeOKgGeo9ODys5hxmjb9RfrmPF4@cgxZdTXtIb-J7VvNAFetunQ7cWHOcZjdG0SWbtiLlFsAnDqbSd7ZWSlKV24`;
+      inviteCodes[i] = `cgxZLmmBJbzc4wjIDADGr6PcWhDUT2IKeba1t8aAzQE5EXfYng@cgxZdTXtI7zSuFqYCQKsu7DTChBhLYfhu00_2a8_ov_gmyGLaZ-bBGGTHYA@cgxZdTXtIbuM4luaDA2p5qWctl9pbDvXxUrXqDqO6UK1P7Y2IoGdIBondPc@cgxZdTXtTuWhsnmKUWP0jCy3QiaOyhwwSt0a_cOvZLJdV9tgbqraKbs@cgxZdTXtIbqJ7V3OCgGsvpRZJJEOd3F_eKqR4ZOMHgkxjlwHnfGcXA6FAsg@cgxZdTXtIrvb4lycCQ2o726_V6e49JBIaMEctc3nZIslucpLeKprCsqRtqE@cgxZdTXtc8KLu3CDU2Xdir2c4rCnGeOKgGeo9ODys5hxmjb9RfrmPF4@cgxZdTXtIb-J7VvNAFetunQ7cWHOcZjdG0SWbtiLlFsAnDqbSd7ZWSlKV24`;
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
