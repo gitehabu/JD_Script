@@ -83,16 +83,25 @@ const inviteCodes = [];
       $.done();
     })
 async function jdNian() {
-  await getHomeData()
-  if(!$.secretp) return
-  await map()
-  await queryMaterials()
-  await getTaskList()
-  await $.wait(1000)
-  await doTask()
-  await helpFriends()
-  await getHomeData(true)
-  await showMsg()
+  try {
+    await getHomeData()
+    if(!$.secretp) return
+    await $.wait(2000)
+    await $.wait(2000)
+    await map()
+    await $.wait(2000)
+    await queryMaterials()
+    await getTaskList()
+    await $.wait(1000)
+    await doTask()
+    await $.wait(2000)
+    await helpFriends()
+    await $.wait(2000)
+    await getHomeData(true)
+    await showMsg()
+  } catch (e) {
+    $.logErr(e)
+  }
 }
 function encode(data, aa, extraData) {
   const temp = {
@@ -347,22 +356,24 @@ function collectScore(taskId,itemId,actionType=null,inviteId=null,shopSign=null)
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            if (data.data.bizCode === 0) {
-              if(data.data.result.score)
-                console.log(`任务完成，获得${data.data.result.score}爆竹🧨`)
-              else if(data.data.result.maxAssistTimes) {
-                console.log(`助力好友成功`)
-              } else{
-                console.log(`任务上报成功`)
-                await $.wait(10*1000)
-                if(data.data.result.taskToken){
-                  await doTask2(data.data.result.taskToken)
+            if (data.code === 0) {
+              if (data.data && data.data.bizCode === 0) {
+                if(data.data.result.score)
+                  console.log(`任务完成，获得${data.data.result.score}爆竹🧨`)
+                else if(data.data.result.maxAssistTimes) {
+                  console.log(`助力好友成功`)
+                } else{
+                  console.log(`任务上报成功`)
+                  await $.wait(10*1000)
+                  if(data.data.result.taskToken){
+                    await doTask2(data.data.result.taskToken)
+                  }
                 }
+                // $.userInfo = data.data.result.userInfo;
               }
-              // $.userInfo = data.data.result.userInfo;
-            }
-            else{
-              console.log(data.data.bizMsg)
+              else{
+                console.log(data.data.bizMsg)
+              }
             }
           }
         }
@@ -452,8 +463,8 @@ function getTaskList(body={}) {
             data = JSON.parse(data);
             if (data.data.bizCode === 0) {
               if(JSON.stringify(body)==="{}") {
+                $.taskVos = data.data.result.taskVos;//任务列表
                 console.log(`您的好友助力码为${data.data.result.inviteId}`)
-                  $.taskVos = data.data.result.taskVos;//任务列表
                }
               // $.userInfo = data.data.result.userInfo;
             }
@@ -529,7 +540,11 @@ function queryMaterials() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if(data.code==='0') {
-              for(let vo of data.data.viewLogo.list){
+              let shopList = data.data.viewLogo.list.concat(data.data.bottomLogo.list)
+              let nameList = []
+              for(let vo of shopList){
+                if(nameList.includes(vo.name)) continue
+                nameList.push(vo.name)
                 console.log(`去做${vo.name}店铺任务`)
                 await shopLotteryInfo(vo.desc)
                 await $.wait(2000)
@@ -545,6 +560,7 @@ function queryMaterials() {
     })
   })
 }
+
 function shopLotteryInfo(shopSign) {
   let body = {"shopSign":shopSign}
   return new Promise(resolve => {
@@ -830,10 +846,6 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    // const readShareCodeRes = await readShareCode();
-    // if (readShareCodeRes && readShareCodeRes.code === 200) {
-    //   $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
-    // }
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })
