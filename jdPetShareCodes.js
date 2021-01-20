@@ -62,6 +62,14 @@ let hy = {
     '_ZL': {
         nickName: '泽',
         shareCode: 'MTAxODcxOTI2NTAwMDAwMDAwMzAwNjk3NQ=='
+    },
+    '_ZQ': {
+        nickName: '泽Q',
+        shareCode: 'MTAxODc2NTEzMTAwMDAwMDAxODk4MTIyNQ=='
+    },
+    '_AIE': {
+        nickName: 'AIE',
+        shareCode: 'MTAxODc2NTEzOTAwMDAwMDAwNDk2MjUxNg=='
     }
 }
 
@@ -76,6 +84,7 @@ let hy = {
 // ]
 
 let helpArr = {
+    '_ZL':      [hy._zZ.shareCode, hy._MA.shareCode, hy._ZQ.shareCode, hy._AIE.shareCode],
     '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZMAMA.shareCode],
     '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZMAMA.shareCode],
     '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZ.shareCode],

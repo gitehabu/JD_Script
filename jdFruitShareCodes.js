@@ -56,6 +56,10 @@ let hy = {
         nickName: '',
         shareCode: 'b6b55daa037c4eacac258b717b36aea2'
     },
+    '_WZMAMA': {
+        nickName: '',
+        shareCode: '10908d829ca944e997200a0d8209783c'
+    },
     '_FF': {
         nickName: '',
         shareCode: '289f2cb96f284588a8f3b33f0d023bf0'
@@ -64,13 +68,13 @@ let hy = {
         nickName: '泽',
         shareCode: '2e504781a7f049ce850554ef685511b6'
     },
-    '_AiE': {
-        nickName: 'ai娥',
-        shareCode: '48a0dd9e2c41427eb2273160804b592b'
+    '_ZQ': {
+        nickName: '泽Q',
+        shareCode: 'a8ddffc86c74421ca9c370a7fede0439'
     },
-    '_WZMAMA': {
-        nickName: '',
-        shareCode: '10908d829ca944e997200a0d8209783c'
+    '_AiE': {
+        nickName: 'AiE',
+        shareCode: '48a0dd9e2c41427eb2273160804b592b'
     }
 }
 // let helpArr = {
@@ -83,6 +87,7 @@ let hy = {
 // }
 
 let helpArr = {
+    '_ZL':      [hy._zZ.shareCode, hy._AiE.shareCode, hy._ZQ.shareCode],
     '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode],
     '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode, hy._D.shareCode, hy._BA.shareCode],
     '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._D.shareCode, hy._BA.shareCode],
