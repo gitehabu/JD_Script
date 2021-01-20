@@ -872,49 +872,38 @@ async function doFriendsWater() {
         let date = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000
         let nowTime = format("yyyy-MM-dd", date)
 
-        let _FF = { code: '289f2cb96f284588a8f3b33f0d023bf0' }
-        if (($.farmInfo.farmUserPro.shareCode === _FF.code) && (format("HH:mm:ss", date) < format("11:00:00"))) {
-            return
-        }
-        let _WZMM = { code: '10908d829ca944e997200a0d8209783c'}
-        if (($.farmInfo.farmUserPro.shareCode === _WZMM.code) && (format("HH:mm:ss", date) < format("11:00:00"))) {
-            return
-        }
-
-
         let _zZ = {
             code: '6e74c86a47f84db5832b33c76fbe32a8'
-        }
-
-        let _D = {
-            code: '33819377bfd44628b3fe7607fb5ea090'
         }
 
         let _MA = {
             code: '597f1a10a91b473ab89f03cafa88a9a4'
         }
 
-        let _BA = {
-            code: 'b0f5d0c06eb74dc39d62b336264df3fe'
-        }
-
-
         let response = $.friendList
-        if ($.farmInfo.farmUserPro.shareCode === _zZ.code) {
+        console.log(`【为我浇水的好友】${JSON.stringify(response.friendInfos[0])}`)
+        console.log(`【今日为我浇水的好友】${JSON.stringify(response.friendInfos[0][nowTime] || [])}`)
+
+        if ($.farmInfo.farmUserPro.shareCode === '2e504781a7f049ce850554ef685511b6') {
             let arr2 = (response.friendInfos[0][nowTime] || []).map(function(item){return item.shareCode})
-            arr2.push(_MA.code)
-            arr2.push(_D.code)
-            arr2.push(_BA.code)
+            arr2.push('a8ddffc86c74421ca9c370a7fede0439', '48a0dd9e2c41427eb2273160804b592b')
             let shareCodeArr = Array.from(new Set(arr2))
             needWaterFriends = response.friends.filter(function (item) {
                 return (shareCodeArr.indexOf(item.shareCode) > -1)
             })
         }
+
         if ($.farmInfo.farmUserPro.shareCode === _MA.code) {
             let arr2 = (response.friendInfos[0][nowTime] || []).map(function(item){return item.shareCode})
-            arr2.push(_zZ.code)
-            arr2.push(_D.code)
-            arr2.push(_BA.code)
+            arr2.push(_zZ.code, '33819377bfd44628b3fe7607fb5ea090', '597f1a10a91b473ab89f03cafa88a9a4')
+            let shareCodeArr = Array.from(new Set(arr2))
+            needWaterFriends = response.friends.filter(function (item) {
+                return (shareCodeArr.indexOf(item.shareCode) > -1)
+            })
+        }
+        if ($.farmInfo.farmUserPro.shareCode === _zZ.code) {
+            let arr2 = (response.friendInfos[0][nowTime] || []).map(function(item){return item.shareCode})
+            arr2.push(_MA.code, '33819377bfd44628b3fe7607fb5ea090', '597f1a10a91b473ab89f03cafa88a9a4')
             let shareCodeArr = Array.from(new Set(arr2))
             needWaterFriends = response.friends.filter(function (item) {
                 return (shareCodeArr.indexOf(item.shareCode) > -1)

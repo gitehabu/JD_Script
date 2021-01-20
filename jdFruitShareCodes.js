@@ -77,25 +77,18 @@ let hy = {
         shareCode: '48a0dd9e2c41427eb2273160804b592b'
     }
 }
-// let helpArr = {
-//     '_FF': [hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._MA.shareCode],
-//     '_WZ': [hy._zZ.shareCode, hy._D.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode],
-//     '_BA': [hy._zZ.shareCode, hy._D.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
-//     '_D': [hy._zZ.shareCode, hy._BA.shareCode, hy._MA.shareCode, hy._WZ.shareCode],
-//     '_zZ': [hy._D.shareCode, hy._BA.shareCode, hy._FF.shareCode, hy._ZL.shareCode],
-//     '_MA': [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
-// }
 
 let helpArr = {
     '_ZL':      [hy._zZ.shareCode, hy._AiE.shareCode, hy._ZQ.shareCode],
     '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode],
     '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode, hy._D.shareCode, hy._BA.shareCode],
     '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._D.shareCode, hy._BA.shareCode],
-    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
-    '_MA':      [hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._zZ.shareCode],
-    '_D':       [hy._MA.shareCode, hy._BA.shareCode],
-    '_zZ':      [hy._MA.shareCode, hy._ZL.shareCode, hy._WZ.shareCode, hy._FF.shareCode, hy._D.shareCode, hy._BA.shareCode],
+    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode],
+    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._WZ.shareCode],
+    '_MA':      [hy._zZ.shareCode, hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
+    '_zZ':      [hy._ZL.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._FF.shareCode, hy._D.shareCode, hy._BA.shareCode],
 }
+
 exports.hy = function (helpFriends, curNickName, curShareCode) {
     let curName = null
     for (let key in hy){
@@ -152,12 +145,6 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
     //         helpArr._zZ[helpArr._zZ.length] = hy._MA.shareCode
     //     }
     // }
-
-
-
-    if ((curShareCode === hy._D.shareCode) && (nowTime > format("17:00:00"))) {
-        helpArr['_D'].push(hy._zZ.shareCode)
-    }
 
 
     return helpArr[curName]

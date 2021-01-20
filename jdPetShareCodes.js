@@ -88,10 +88,10 @@ let helpArr = {
     '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZMAMA.shareCode],
     '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZMAMA.shareCode],
     '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZ.shareCode],
-    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode],
-    '_MA':      [hy._D.shareCode, hy._FF.shareCode, hy._ZL.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
-    '_D':       [hy._MA.shareCode, hy._BA.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
-    '_zZ':      [hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode, hy._WZ.shareCode, hy._FF.shareCode, hy._WZMAMA.shareCode],
+    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
+    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._WZ.shareCode, hy._ZL.shareCode],
+    '_MA':      [hy._zZ.shareCode, hy._ZL.shareCode, hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
+    '_zZ':      [hy._ZL.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZ.shareCode, hy._FF.shareCode, hy._WZMAMA.shareCode],
 }
 
 exports.hy = function (helpFriends, curNickName, curShareCode) {
