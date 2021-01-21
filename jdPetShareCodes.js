@@ -84,8 +84,8 @@ let hy = {
 // ]
 
 let helpArr = {
-    '_ZL':      [hy._zZ.shareCode, hy._MA.shareCode, hy._ZQ.shareCode, hy._AIE.shareCode],
-    '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZMAMA.shareCode],
+    '_ZL':      [hy._zZ.shareCode, hy._MA.shareCode, hy._ZQ.shareCode, hy._AIE.shareCode, hy._WZMAMA.shareCode],
+    '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode],
     '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZMAMA.shareCode],
     '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZ.shareCode],
     '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
