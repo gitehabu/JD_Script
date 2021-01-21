@@ -84,8 +84,8 @@ let helpArr = {
     '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode, hy._D.shareCode, hy._BA.shareCode],
     '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._D.shareCode, hy._BA.shareCode],
     '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode],
-    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._WZ.shareCode],
-    '_MA':      [hy._zZ.shareCode, hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode],
+    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._ZL.shareCode],
+    '_MA':      [hy._zZ.shareCode, hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._ZL.shareCode],
     '_zZ':      [hy._ZL.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._FF.shareCode, hy._D.shareCode, hy._BA.shareCode],
 }
 
@@ -123,7 +123,8 @@ exports.hy = function (helpFriends, curNickName, curShareCode) {
     };
     let nowTime = format("HH:mm:ss", new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000)
 
-    console.log('=> test: ', curName, curNickName, nowTime, nowTime > format("21:00:00"), helpFriends.indexOf(hy._AiE.nickName), helpFriends.indexOf(hy._ZL.nickName), helpFriends, curShareCode)
+    console.log('为我助力的好友：' + helpFriends)
+    console.log('=> test: ', curName, curNickName, nowTime, nowTime > format("21:00:00"), helpFriends.indexOf(hy._AiE.nickName), helpFriends.indexOf(hy._ZL.nickName), curShareCode)
 
 
     /**
