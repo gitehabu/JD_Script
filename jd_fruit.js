@@ -699,7 +699,7 @@ async function turntableFarm() {
         }
         //天天抽奖助力
         console.log('开始天天抽奖--好友助力--每人每天只有三次助力机会.')
-        let helpArr = [`6e74c86a47f84db5832b33c76fbe32a8`, `10908d829ca944e997200a0d8209783c`, `33819377bfd44628b3fe7607fb5ea090`, `b0f5d0c06eb74dc39d62b336264df3fe`]
+        let helpArr = [`6e74c86a47f84db5832b33c76fbe32a8`, `597f1a10a91b473ab89f03cafa88a9a4`, `33819377bfd44628b3fe7607fb5ea090`, `b0f5d0c06eb74dc39d62b336264df3fe`]
         for (let code of helpArr) {
             if (code === $.farmInfo.farmUserPro.shareCode) {
                 console.log('天天抽奖-不能自己给自己助力\n')
