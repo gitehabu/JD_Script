@@ -881,8 +881,8 @@ async function doFriendsWater() {
         }
 
         let response = $.friendList
-        console.log(`【为我浇水的好友】${JSON.stringify(response.friendInfos)}`)
-        console.log(`【今日为我浇水的好友】${JSON.stringify(response.friendInfos[0][nowTime])}`)
+        console.log(`【浇水历史】${JSON.stringify(response.friendInfos)}`)
+        console.log(`【今日浇水好友】${JSON.stringify(response.friendInfos[0][nowTime])}`)
 
         if ($.farmInfo.farmUserPro.shareCode === '10908d829ca944e997200a0d8209783c') {
             let arr2 = (response.friendInfos[0][nowTime] || []).map(function(item){return item.shareCode})
