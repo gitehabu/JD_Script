@@ -4,6 +4,7 @@ let CookieJDs = [
 ]
 
 // 判断github action里面是否有京东ck
+console.log(process.env.JD_COOKIE)
 if (process.env.JD_COOKIE) {
   let msg = ''
   if (process.env.JD_COOKIE.indexOf('&') > -1) {
