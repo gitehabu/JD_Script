@@ -58,7 +58,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
   await requireConfig();
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
-    inviteCodes[i] = '';
+    inviteCodes[i] = 'T018v_VwQRgf_FLWJB-b1ACjVWmIaW5kRrbA@T0225KkcRxgRpwCGIR3xwPEDIgCjVWmIaW5kRrbA@T0225KkcRR9P_QGEJBL0naQKIgCjVWmIaW5kRrbA@T0205KkcKkFirSOUeXyp95Z4CjVWmIaW5kRrbA@T0225KkcRR5K8gfQIh7xxaYKIACjVWmIaW5kRrbA@T0225KkcRh8Y_QaCIRL1lKZfdgCjVWmIaW5kRrbA@T0205KkcF2ZIpCqde3qA8YJiCjVWmIaW5kRrbA@T0225KkcRRtK8gHTKEjwwfQCdwCjVWmIaW5kRrbA';
     if (cookie) {
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
