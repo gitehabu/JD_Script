@@ -1,14 +1,14 @@
 
 
-name: jd_nian 京东炸年兽
+name: jd_nian_ 京东炸年兽
 on:
   workflow_dispatch:
   schedule:
-      - cron: "0 1,4,12,13 * * *"
+      - cron: "1 18,5,13 * * *"
   watch:
       types: [started]
   repository_dispatch:
-      types: jd_nian
+      types: jd_nian_
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,4 +28,4 @@ jobs:
       - name: '运行 【京东炸年兽】'
         run: |
           cd ~/scripts
-          node jd_nian.js
+          node jd_nian_.js
