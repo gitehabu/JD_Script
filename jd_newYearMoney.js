@@ -58,7 +58,7 @@ const inviteCodes = [];
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
-      inviteCodes[i] = '';
+      inviteCodes[i] = '-5oyWuBOqY1WB-ded_w8s-AQquEwjn7IfVxShPlqeBKK@oMZeXOBA8t8GAuU0Y7Z5qb31jAwUYVBMx3wryukbXOzFrLR6@oMZeXuceqN4EB-oxPuNwqdPtM9eVXx2l4SntAfDXyuE6Tt0N@oMZeMbkz-PwUWoRsVNECs7xNJlUvgpmzG0dYOvsTxfZye4s@oMZeXuYbp9hQAeY0ZuFwq6bjgRigfllI4OnvQcornOZvEWYj@oMZeXuMbp95TC7A1YrN4_Ndb7q_zEBaxZoGHeHLcPNfmz0mB@oMZeDJ4Z8fUdWIJFUsUYs2jrenWrjin6HlZqc_pDUfIdfJA@oMZeXedJqNkCAuowN-El_dpzQD2lNBHG1UTBsbZ2dzUWxMUH';
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
