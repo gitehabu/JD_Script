@@ -4,7 +4,7 @@ name: jd_immortal 京东神仙书院
 on:
   workflow_dispatch:
   schedule:
-      - cron: "20 0 * * *"
+      - cron: "20 0,4,14 * * *"
   watch:
       types: [started]
   repository_dispatch:
