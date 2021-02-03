@@ -56,7 +56,7 @@ const JD_API_HOST = 'https://shopping-festival.m.jd.com/sf/';
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
-      inviteCodes[i] = '';
+      inviteCodes[i] = '05a683c4-e688-44c2-b56b-44e219b86584@e8381272-87a4-4448-bd52-67f1a1eb1ca4@17a2d855-e1a7-42c0-ac7c-8f10d0e6c33f@d021ca59-f51c-4a7a-9bf5-bc392958baa1@3b69e6e3-2f11-482d-9f9a-0ffb3730e547@d69fcbb8-7a5d-4e0e-90e9-65ea60b7c7c0@6c2ceb60-4d44-433c-8fe2-b7f232c2ceee@f51129a2-6fe9-4a1f-9ed8-dd0c96449fb8';
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
