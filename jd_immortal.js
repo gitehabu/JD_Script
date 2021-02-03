@@ -62,16 +62,7 @@ const inviteCodes = [];
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
-      inviteCodes[i] = `
-      38xIs4YwE5Z7HhZmFyW0Oy5sa7F-sUeMyxH5yD4lQKswRx0JVhjizLOJnUg@
-      43xIs4YwE5Z7DsWOzDSL_dKWai1Jnu-A9CeRwL67Pp9mcccZB9wUJb3Wqgr9T2iItavA@
-      43xIs4YwE5Z7DsWOzDSBalIdhXP1P4HOVplc17mL2ZdZ0ccZB9w0UFh2uVpDaL17_omw@
-      40xIs4YwE5Z7DsWOzDLPNZxW_EwciBJ3waXTzYQ2DQgcZB9rBso10lEo54yfoHE@
-      43xIs4YwE5Z7DsWOzDSBaVTERW7g4_RGxPC8pK3o3dMZv8cZB9w0QAiG1UFxQtyhA3RA@
-      40xIs4YwE5Z7DsWOzDGZcpRWfnM_AP8I5LG8PgtfPWicZB9kTwC3kDF2RkgV7nc@
-      43xIs4YwE5Z7DsWOzDSP6hBdmAnUo8VNqgt-SoDDRCLzO8cZB9wEVSh2y6BlU_vYzNUQ@
-      43xIs4YwE5Z7DsWOzDSBeRTER7rKqjPmZSb6xhIro6TOnwcZB9w0EAiGuQfrqjVHof9g
-      `;
+      inviteCodes[i] = '38xIs4YwE5Z7HhZmFyW0Oy5sa7F-sUeMyxH5yD4lQKswRx0JVhjizLOJnUg@43xIs4YwE5Z7DsWOzDSL_dKWai1Jnu-A9CeRwL67Pp9mcccZB9wUJb3Wqgr9T2iItavA@43xIs4YwE5Z7DsWOzDSBalIdhXP1P4HOVplc17mL2ZdZ0ccZB9w0UFh2uVpDaL17_omw@40xIs4YwE5Z7DsWOzDLPNZxW_EwciBJ3waXTzYQ2DQgcZB9rBso10lEo54yfoHE@43xIs4YwE5Z7DsWOzDSBaVTERW7g4_RGxPC8pK3o3dMZv8cZB9w0QAiG1UFxQtyhA3RA@40xIs4YwE5Z7DsWOzDGZcpRWfnM_AP8I5LG8PgtfPWicZB9kTwC3kDF2RkgV7nc@43xIs4YwE5Z7DsWOzDSP6hBdmAnUo8VNqgt-SoDDRCLzO8cZB9wEVSh2y6BlU_vYzNUQ@43xIs4YwE5Z7DsWOzDSBeRTER7rKqjPmZSb6xhIro6TOnwcZB9w0EAiGuQfrqjVHof9g';
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
