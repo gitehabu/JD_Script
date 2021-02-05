@@ -4,7 +4,7 @@ name: jd_cash 签到领现金
 on:
   workflow_dispatch:
   schedule:
-      - cron: "56 22 * * *"
+      - cron: "12 23,0 * * *"
   watch:
       types: [started]
   repository_dispatch:
