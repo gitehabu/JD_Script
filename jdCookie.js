@@ -3,7 +3,8 @@
 let CookieJDs = [
     'pt_pin=jd_50c7c7245aa0d;pt_key=AAJgB_DDADDM93TVurZTXLkl3cQVX9RjJtD1BzQ-_-wb5fuQ19l7uBcmmqRUSIIXTeKykfJIRKE;',  // ZL
     'pt_pin=jd_55c7e48b4e383;pt_key=AAJf9nW0ADDuiLP2DAgVUUqm-h9UxHwYP0kODAHzb6VYkmeTh-Kk3Kht01usD_A6Rf75U-Dfoqo;',  // FF
-    'pt_pin=jd_gHaaNzkPDUEX;pt_key=AAJf-aNIADBv7xZW45EZDJt6UFtmAjsRT34_rQtzKI4YdWy_fhdBR_WQZBxG8Xr9HYrrc4vCdRk;',   // WZ
+    'pt_pin=jd_gHaaNzkPDUEX;pt_key=AAJgHPVYADCTkS4pdxh4weNnyy8NYG6Ogvez58BTq-QTINlkLbF4PNcORPTMFqQ2GZIqZg7pArI;',   // WZ
+    'pt_pin=jd_41284b5930d4c;pt_key=AAJgHPRNADAp0LZy1kjvnyN2cj1HLlZnqVsj9K90EsuA0gI68ST9dYNjhiTsYe_H7K9DTCNF1BI;',  // TT
     'pt_pin=jd_6118be1810ae2;pt_key=AAJf_q0FADBGG3zjBt-_rfoejZqz6Uks5MVdBFQrsk_NmqJdidQtRKsqfDiyfDdO6H_-kQHKXPg;',  // WZMAMA
     'pt_pin=jd_ZoKhGsiVmSQB;pt_key=AAJf9vykADBnUYmww3UVhQsSxf2JbAEZVPYwaBmCK5ZdEpMiJeifE-gehvxszZ-n31u78Z4j_oM;',   // BA
     'pt_pin=jd_51f8ec4809c0f;pt_key=AAJf9m8bADCv6YqWIcoJCVWFX2HFvNstLDSPLP--H71ipT82WGCyPYXt8zzECE_3nUqeT0N-obI;',  // D
