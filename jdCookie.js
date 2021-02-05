@@ -15,7 +15,7 @@ if (process.env.JD_COOKIE) {
   } else {
     CookieJDs = process.env.JD_COOKIE.split();
   }
-  console.log(`======================================== ${msg}，共有 ${CookieJDs.length-1} 个京东账号 Cookie ========================================\n`);
+  console.log(`======================================== ${msg}，共有 ${CookieJDs.length} 个京东账号 Cookie ========================================\n`);
   // console.log(`\n==================脚本执行来自 github action=====================\n`)
 }
 
