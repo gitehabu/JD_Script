@@ -56,7 +56,11 @@ let hy = {
         nickName: '',
         shareCode: 'b6b55daa037c4eacac258b717b36aea2'
     },
-    '_WZMAMA': {
+    '_TT': {
+        nickName: 'TT',
+        shareCode: '620805a1ce2b4fc8ab89e6d3a8a82c80'
+    },
+    '_WZMM': {
         nickName: '',
         shareCode: '10908d829ca944e997200a0d8209783c'
     },
@@ -80,13 +84,14 @@ let hy = {
 
 let helpArr = {
     '_ZL':      [hy._zZ.shareCode, hy._AiE.shareCode, hy._ZQ.shareCode],
-    '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode],
-    '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._WZMAMA.shareCode, hy._D.shareCode, hy._BA.shareCode],
-    '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._D.shareCode, hy._BA.shareCode],
-    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode],
-    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._ZL.shareCode],
-    '_MA':      [hy._zZ.shareCode, hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._ZL.shareCode],
-    '_zZ':      [hy._ZL.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._FF.shareCode, hy._D.shareCode, hy._BA.shareCode],
+    '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
+    '_WZ':      [hy._zZ.shareCode, hy._TT.shareCode, hy._WZMAMA.shareCode],
+    '_TT':      [hy._MA.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
+    '_WZMAMA':  [hy._MA.shareCode, hy._TT.shareCode, hy._WZ.shareCode],
+    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode],
+    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode],
+    '_MA':      [hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._FF.shareCode],
+    '_zZ':      [hy._ZL.shareCode, hy._WZ.shareCode, hy._FF.shareCode],
 }
 
 exports.hy = function (helpFriends, curNickName, curShareCode) {

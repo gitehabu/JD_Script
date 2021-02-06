@@ -51,7 +51,11 @@ let hy = {
         nickName: '',
         shareCode: 'MTAxODc2NTEzNDAwMDAwMDAzMTQyMDUwMQ=='
     },
-    '_WZMAMA': {
+    '_TT': {
+        nickName: 'TT',
+        shareCode: 'MTE1NDQ5MzYwMDAwMDAwNDQxMjEwNTk='
+    },
+    '_WZMM': {
         nickName: '',
         shareCode: 'MTAxODc2NTEzOTAwMDAwMDAzMzM4NjQ2Nw=='
     },
@@ -75,23 +79,28 @@ let hy = {
 
 // let arr = [
 //     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,                           // _FF
-//     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._WZMAMA.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,   // _WZ
-//     `${hy._WZ.shareCode}@${hy._MA.shareCode}`,                                                                  // _WZMAMA
+//     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._WZMM.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,   // _WZ
+//     `${hy._WZ.shareCode}@${hy._MA.shareCode}`,                                                                  // _WZMM
 //     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._D.shareCode}@${hy._WZ.shareCode}`,                           // _BA
 //     `${hy._zZ.shareCode}@${hy._MA.shareCode}@${hy._BA.shareCode}@${hy._WZ.shareCode}`,                          // _D
 //     `${hy._MA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._ZL.shareCode}@${hy._D.shareCode}@${hy._BA.shareCode}`,           // _zZ
-//     `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._WZMAMA.shareCode}`,                           // _MA
+//     `${hy._D.shareCode}@${hy._BA.shareCode}@${hy._FF.shareCode}@${hy._WZ.shareCode}@${hy._WZMM.shareCode}`,                           // _MA
 // ]
 
 let helpArr = {
-    '_ZL':      [hy._zZ.shareCode, hy._MA.shareCode, hy._ZQ.shareCode, hy._AIE.shareCode, hy._WZMAMA.shareCode],
-    '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode],
-    '_WZ':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZMAMA.shareCode],
-    '_WZMAMA':  [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZ.shareCode],
-    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
-    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._BA.shareCode, hy._WZ.shareCode, hy._ZL.shareCode],
-    '_MA':      [hy._zZ.shareCode, hy._ZL.shareCode, hy._D.shareCode, hy._FF.shareCode, hy._WZ.shareCode, hy._WZMAMA.shareCode],
-    '_zZ':      [hy._ZL.shareCode, hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._WZ.shareCode, hy._FF.shareCode, hy._WZMAMA.shareCode],
+    '_ZL':      [hy._ZQ.shareCode, hy._AIE.shareCode, hy._zZ.shareCode, hy._MA.shareCode],
+
+    '_WZ':      [hy._TT.shareCode, hy._WZMM.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode],
+    '_TT':      [hy._WZ.shareCode, hy._WZMM.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode],
+    '_WZMM':    [hy._WZ.shareCode, hy._TT.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode],
+
+
+    '_FF':      [hy._zZ.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._WZMM.shareCode, hy._TT.shareCode],
+    '_BA':      [hy._zZ.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._WZMM.shareCode, hy._TT.shareCode],
+    '_D':       [hy._zZ.shareCode, hy._MA.shareCode, hy._WZ.shareCode, hy._WZMM.shareCode, hy._TT.shareCode],
+
+    '_zZ':      [hy._MA.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode, hy._FF.shareCode],
+    '_MA':      [hy._zZ.shareCode, hy._D.shareCode, hy._BA.shareCode, hy._ZL.shareCode, hy._FF.shareCode],
 }
 
 exports.hy = function (helpFriends, curNickName, curShareCode) {
